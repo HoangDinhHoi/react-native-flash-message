@@ -224,6 +224,7 @@ export const DefaultFlash = React.forwardRef(
             {hasIcon && icon.position === "left" && iconView}
             <View style={styles.flashLabel}>
               <Text
+              allowFontScaling={false}
                 style={[
                   styles.flashText,
                   hasDescription && styles.flashTitle,
@@ -237,7 +238,7 @@ export const DefaultFlash = React.forwardRef(
               </Text>
               {!!renderCustomContent && renderCustomContent(message)}
               {hasDescription && (
-                <Text style={[styles.flashText, !!message.color && { color: message.color }, textStyle]} {...textProps}>
+                <Text style={[styles.flashText, !!message.color && { color: message.color }, textStyle]} {...textProps} allowFontScaling={false}>
                   {message.description}
                 </Text>
               )}
